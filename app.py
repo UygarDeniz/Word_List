@@ -8,6 +8,7 @@ class App:
 
     def __init__(self):
 
+        # Check if the window is initialized before, so that it won't be destroyed later when init is called
         if not App.root:
             self.window = Tk()
             self.window.geometry("1080x720")
@@ -30,7 +31,6 @@ class App:
         self.menu_bar = Menu(self.window)
 
         self.find_word_menu = Menu(self.menu_bar)
-
         self.word_list_menu = Menu(self.menu_bar)
 
         self.menu_bar.add_command(label="Find Word", command=self.show_main)
